@@ -28,6 +28,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void submit (View view){
 
-        if ()
+      //  if ()
     }
 }
