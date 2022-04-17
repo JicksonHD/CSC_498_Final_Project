@@ -2,7 +2,9 @@ package com.example.final_project_front_end;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
         //Adding animation to hint for sign up if you don't have an account TextView
         registration_hint.setTranslationX(-1500);
         registration_hint.animate().translationXBy(1500).setDuration(1500);
+    }
+
+    public void signIn(View view){
+
+        Intent page2 = new Intent(getApplicationContext(),MainActivity2.class);
+        startActivity(page2);
+    }
+
+    public void signUp(View view){
+
+
     }
 
 
