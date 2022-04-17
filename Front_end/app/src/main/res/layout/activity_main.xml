@@ -58,11 +58,22 @@
         android:id="@+id/here_to_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="We are here To Help!"
+        android:text="We are here To Help with your construction journey!"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_in" />
+
+    <TextView
+        android:id="@+id/proceed_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in To Proceed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
