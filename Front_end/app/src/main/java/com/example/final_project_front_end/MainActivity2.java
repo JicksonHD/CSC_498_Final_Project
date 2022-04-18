@@ -36,7 +36,8 @@ public class MainActivity2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Your email or password is missing",Toast.LENGTH_LONG).show();
         }
         else {
-            //Intent
+            Intent general_features = new Intent(getApplicationContext(),MainActivity4.class);
+            startActivity(general_features);
         }
     }
 }
