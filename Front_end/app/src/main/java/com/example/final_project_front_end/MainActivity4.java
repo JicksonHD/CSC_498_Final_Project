@@ -58,7 +58,8 @@ public class MainActivity4 extends AppCompatActivity {
     public void takeMeToMaterials(View view){
         //Onclick method that takes us to the material page
 
-        Intent materials_page = new Intent(getApplicationContext(),MainActivity5.class);
+        Intent materials_page = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(materials_page);
     }
 
     public void takeMeToEquip(View view){
@@ -72,7 +73,8 @@ public class MainActivity4 extends AppCompatActivity {
         //Onclick method that takes us to the Tasks page
 
 
-        // Intent tasks_page = new Intent(getApplicationContext(),);
+         Intent tasks_page = new Intent(getApplicationContext(),MainActivity5.class);
+         startActivity(tasks_page);
     }
 
     public void takeMeToServices(View view){

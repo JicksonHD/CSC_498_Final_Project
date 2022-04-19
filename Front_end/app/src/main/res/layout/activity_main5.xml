@@ -4,4 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity5"/>
+    tools:context=".MainActivity5">
+
+    <ListView
+        android:id="@+id/task_list"
+        android:layout_width="409dp"
+        android:layout_height="329dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316" />
+
+    <Button
+        android:id="@+id/addTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addTask"
+        android:text="Add Task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_list"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <EditText
+        android:id="@+id/task_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your task  here"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/addTask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_list" />
+
+    <TextView
+        android:id="@+id/removeHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To remove a task click on it"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTask"
+        app:layout_constraintVertical_bias="0.42" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
