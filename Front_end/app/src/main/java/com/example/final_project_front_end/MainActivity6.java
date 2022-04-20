@@ -40,6 +40,7 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
         building = (EditText) findViewById(R.id.building);
         city = (EditText) findViewById(R.id.city);
         order_button = (Button) findViewById(R.id.order_button);
+        material_order_result = (TextView) findViewById(R.id.materials_result_order);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),R.array.materials, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -85,21 +86,55 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
             material_logo.setTranslationX(-1500);
             material_logo.setImageResource(R.drawable.wood);
             material_logo.animate().translationXBy(1500).setDuration(1500);
+            material_order_result.setText("");
+            type.setText("");
+            quantity.setText("");
+            street.setText("");
+            building.setText("");
+            city.setText("");
+
         }
         else if (i == 1){
             material_logo.setTranslationX(-1500);
             material_logo.setImageResource(R.drawable.steel);
             material_logo.animate().translationXBy(1500).setDuration(1500);
+            material_order_result.setText("");
+            type.setText("");
+            quantity.setText("");
+            street.setText("");
+            building.setText("");
+            city.setText("");
         }
         else if (i == 2){
             material_logo.setTranslationX(-1500);
             material_logo.setImageResource(R.drawable.cement);
             material_logo.animate().translationXBy(1500).setDuration(1500);
+            material_order_result.setText("");
+            type.setText("");
+            quantity.setText("");
+            street.setText("");
+            building.setText("");
+            city.setText("");
         }
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+        material_logo.setTranslationX(-1500);
+
     }
+
+    public void order (View view){
+
+        String input_type = type.getText().toString();
+        String input_quantity = quantity.getText().toString();
+        String input_street = street.getText().toString();
+        String input_city = city.getText().toString();
+
+
+        material_order_result.setText(input_quantity + " kg of " + input_type + "\n" + "delivered at " + input_street + " in " + input_city);
+
+    }
+
 }
