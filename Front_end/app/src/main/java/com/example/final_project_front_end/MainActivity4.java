@@ -58,7 +58,7 @@ public class MainActivity4 extends AppCompatActivity {
     public void takeMeToMaterials(View view){
         //Onclick method that takes us to the material page
 
-        Intent materials_page = new Intent(getApplicationContext(),MainActivity.class);
+        Intent materials_page = new Intent(getApplicationContext(),MainActivity6.class);
         startActivity(materials_page);
     }
 

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Final_project_front_end</string>
+
+    <string-array name="materials">
+        <item>Wood</item>
+        <item>Steel</item>
+        <item>Cement</item>
+    </string-array>
 </resources>
