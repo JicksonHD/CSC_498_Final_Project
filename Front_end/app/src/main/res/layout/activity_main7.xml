@@ -7,7 +7,7 @@
     tools:context=".MainActivity7">
 
     <TextView
-        android:id="@+id/hint_services"
+        android:id="@+id/pick_services_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Pick the service you want"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.043" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/services_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

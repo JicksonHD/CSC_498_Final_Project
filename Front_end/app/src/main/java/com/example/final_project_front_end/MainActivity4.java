@@ -81,6 +81,7 @@ public class MainActivity4 extends AppCompatActivity {
         //Onclick method that takes us to the services page
 
 
-        //  Intent services_page = new Intent(getApplicationContext(),);
+         Intent services_page = new Intent(getApplicationContext(),MainActivity7.class);
+         startActivity(services_page);
     }
 }
