@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    //Declaring variables
     ImageView home_page_logo;
     EditText email;
     EditText pass;
@@ -20,16 +21,18 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        //Initilizing variables
         home_page_logo = (ImageView) findViewById(R.id.logo);
         email = (EditText) findViewById(R.id.emailAdress);
         pass = (EditText) findViewById(R.id.password);
 
-
+        //Adding animation to logo
         home_page_logo.setTranslationX(-1500);
         home_page_logo.animate().translationXBy(1500).setDuration(1500);
     }
 
     public void submit (View view){
+        //Submit onclick method that allows the user to use the application
 
         if ((email.getText().toString().equals("")) || (pass.getText().toString().equals(""))){
 
