@@ -156,7 +156,7 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
         String  input_building = building.getText().toString();
 
 
-        material_order_result.setText(input_quantity + " kg of " + input_type + "\n" + "delivered at, " + input_street + "Building " + input_building + " in " + input_city);
+        material_order_result.setText(input_quantity + " kg of " + input_type + "\n" + "delivered at, " + input_street + " Building " + input_building + " in " + input_city);
 
     }
 
