@@ -66,7 +66,8 @@ public class MainActivity4 extends AppCompatActivity {
         //Onclick method that takes us to the equipment page
 
 
-        // Intent equipment_page = new Intent(getApplicationContext(),);
+         Intent equipment_page = new Intent(getApplicationContext(),MainActivity8.class);
+         startActivity(equipment_page);
     }
 
     public void takeMeToTasks(View view){
