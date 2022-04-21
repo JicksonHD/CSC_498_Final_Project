@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class MainActivity8 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    //Declaring variables
     TextView equipments_hint_spinner;
     Spinner equipments;
     TextView pick_equipments_hint;
@@ -31,6 +32,7 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main8);
 
+        //Initilizing variables
         equipments = (Spinner) findViewById(R.id.equipments_spinner);
         equipments_result = (TextView) findViewById(R.id.equipments_result);
         equipments_hint_spinner = (TextView) findViewById(R.id.equip_hint_spinner);
@@ -88,6 +90,7 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        //method  when item is selected in the spinner
 
         if (i == 0){
             input_equipment = "Concrete Mixer";
@@ -140,6 +143,7 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void order(View view){
+        //Onclick method of order button
 
         input_building = building.getText().toString();
         input_city = city.getText().toString();
