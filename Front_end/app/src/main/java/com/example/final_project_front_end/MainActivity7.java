@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity7 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -24,6 +23,7 @@ public class MainActivity7 extends AppCompatActivity implements AdapterView.OnIt
     EditText floor;
     EditText city;
     EditText time;
+    Button order_service;
     String input_service,input_street,input_city,input_building,input_time,input_floor;
 
     @Override
@@ -32,14 +32,15 @@ public class MainActivity7 extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_main7);
 
         //Initilizing variables
-        services = (Spinner) findViewById(R.id.services_spinner);
-        services_result = (TextView) findViewById(R.id.services_result);
+        services = (Spinner) findViewById(R.id.equipments_spinner);
+        services_result = (TextView) findViewById(R.id.equipments_result);
         pick_services_hint = (TextView) findViewById(R.id.pick_services_hint);
         street = (EditText) findViewById(R.id.street);
         building = (EditText) findViewById(R.id.building);
         floor = (EditText) findViewById(R.id.floor);
         city = (EditText) findViewById(R.id.city);
         time = (EditText) findViewById(R.id.time);
+        order_service = (Button) findViewById(R.id.order_service);
         services_hint_spinner = (TextView) findViewById(R.id.services_hint_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.services, android.R.layout.simple_spinner_item);
 
@@ -82,6 +83,10 @@ public class MainActivity7 extends AppCompatActivity implements AdapterView.OnIt
         services_hint_spinner.setTranslationX(-1500);
         services_hint_spinner.animate().translationXBy(1500).setDuration(1500);
 
+        //Adding animation to order button
+        order_service.setTranslationX(-1500);
+        order_service.animate().translationXBy(1500).setDuration(1500);
+
     }
 
     @Override
@@ -89,9 +94,22 @@ public class MainActivity7 extends AppCompatActivity implements AdapterView.OnIt
         //method  when item is selected in the spinner
         if (i == 0){
             input_service = "Plumber";
+            services_result.setText("");
+            street.setText("");
+            building.setText("");
+            city.setText("");
+            time.setText("");
+            floor.setText("");
         }
         else if (i == 1){
             input_service = "Electrician";
+            services_result.setText("");
+            street.setText("");
+            building.setText("");
+            floor.setText("");
+            city.setText("");
+            time.setText("");
+
         }
 
     }

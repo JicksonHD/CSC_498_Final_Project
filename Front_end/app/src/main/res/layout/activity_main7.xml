@@ -21,7 +21,7 @@
 
 
     <Spinner
-        android:id="@+id/services_spinner"
+        android:id="@+id/equipments_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -90,7 +90,7 @@
         app:layout_constraintVertical_bias="0.545" />
 
     <Button
-        android:id="@+id/order_services"
+        android:id="@+id/order_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="order"
@@ -103,7 +103,7 @@
         app:layout_constraintVertical_bias="0.774" />
 
     <TextView
-        android:id="@+id/services_result"
+        android:id="@+id/equipments_result"
         android:layout_width="304dp"
         android:layout_height="78dp"
         android:textColor="@color/black"
