@@ -20,6 +20,7 @@ public class MainActivity3 extends AppCompatActivity {
     EditText email;
     EditText password;
     EditText confirm_password;
+    EditText phone_number;
     TextView error_hint;
     Button register;
 
@@ -35,6 +36,7 @@ public class MainActivity3 extends AppCompatActivity {
         home_page_logo = (ImageView) findViewById(R.id.logo);
         error_hint = (TextView) findViewById(R.id.error_hint);
         register = (Button) findViewById(R.id.register);
+        phone_number = (EditText) findViewById(R.id.phoneNumber);
 
         //Adding animation to home page logo
         home_page_logo.setTranslationX(-1500);
@@ -52,6 +54,10 @@ public class MainActivity3 extends AppCompatActivity {
         confirm_password.setTranslationX(-1500);
         confirm_password.animate().translationXBy(1500).setDuration(1500);
 
+        //Adding animation to phone number TextBox
+        phone_number.setTranslationX(-1500);
+        phone_number.animate().translationXBy(1500).setDuration(1500);
+
         //Adding animation to register button
         register.setTranslationX(-1500);
         register.animate().translationXBy(1500).setDuration(1500);
@@ -60,8 +66,8 @@ public class MainActivity3 extends AppCompatActivity {
     public void register(View view){
 
         //Condition to make sure that the user has entered his\her credentials and confirmation of password
-        if ((email.getText().toString().equals("") || (password.getText().toString().equals("")))){
-            Toast.makeText(getApplicationContext(), "Your email or password is missing", Toast.LENGTH_LONG).show();
+        if ((email.getText().toString().equals("") || (password.getText().toString().equals("")) || (phone_number.getText().toString().equals("")))){
+            Toast.makeText(getApplicationContext(), "Your email,password,or number is missing", Toast.LENGTH_LONG).show();
         }
         else if (!(email.getText().toString().equals("") && !(password.getText().toString().equals("")))){
 
