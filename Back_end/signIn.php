@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 include "db_info.php";
 
 function validate($data){
@@ -25,18 +25,20 @@ $password =  validate($_POST['user_password']);
             $dbpassword = $row['user_password'];
 
             if ($dbemail == $email && password_verify($password, $dbpassword)) {
-                echo "Logged in!";
-                $_SESSION['user_id'] = $row['user_id'];
-                exit();
+                $response[] = $row;
+                $json_respnse = json_encode($response);
+                echo $json_respnse;
+                
+               // exit();
             }   
             else{
-                echo("Incorect User name or password");
-                exit();
+                echo "Incorrect Username or password";
+               // exit();
             }
         }
         else{
-            echo("Incorect User name or password");
-            exit();
+            echo "Incorrect Username or password";
+           // exit();
         }
     
     }

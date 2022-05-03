@@ -24,6 +24,8 @@ public class MainActivity3 extends AppCompatActivity {
     TextView error_hint;
     Button register;
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
