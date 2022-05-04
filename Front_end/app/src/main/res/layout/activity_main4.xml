@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/materialsButton"
+        android:background="@drawable/semi_rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="takeMeToMaterials"
@@ -21,6 +22,7 @@
 
     <Button
         android:id="@+id/equipmentButton"
+        android:background="@drawable/semi_rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="takeMeToEquip"
@@ -34,6 +36,7 @@
 
     <Button
         android:id="@+id/taskButton"
+        android:background="@drawable/semi_rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="takeMeToTasks"
@@ -70,6 +73,7 @@
 
     <Button
         android:id="@+id/servicesButton"
+        android:background="@drawable/semi_rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="takeMeToServices"

@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/sign_in"
+        android:background="@drawable/semi_rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="signIn"
@@ -23,6 +24,7 @@
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/semi_rounded"
         android:onClick="signUp"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/textView_for_signup"
@@ -38,21 +40,22 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:text="If you don't have an account"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.546" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/textView_for_signup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
         android:id="@+id/here_to_help"
@@ -72,8 +75,9 @@
         android:text="Sign in To Proceed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
+        app:layout_constraintVertical_bias="0.706" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

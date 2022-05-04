@@ -129,6 +129,7 @@
 
     <Button
         android:id="@+id/order_button"
+        android:background="@drawable/semi_rounded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="order"
