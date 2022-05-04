@@ -47,7 +47,7 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
             String location_street= params[1];
             String location_building= params[2];
             String location_city= params[3];
-            String time= params[4];
+            String time_arrival= params[4];
 
             URL url;
             HttpURLConnection http;
@@ -66,7 +66,7 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
                 OutputStream out_stream = http.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out_stream, "UTF-8"));
 
-                String post1 = URLEncoder.encode("equipment_name", "UTF-8")+"="+ URLEncoder.encode(equipment_name, "UTF-8")+"&"+URLEncoder.encode("location_street", "UTF-8")+"="+ URLEncoder.encode(location_street, "UTF-8")+"&"+URLEncoder.encode("location_building", "UTF-8")+"="+ URLEncoder.encode(location_building, "UTF-8")+"&"+URLEncoder.encode("location_city", "UTF-8")+"="+ URLEncoder.encode(location_city, "UTF-8")+"&"+URLEncoder.encode("time", "UTF-8")+"="+URLEncoder.encode(time, "UTF-8");
+                String post1 = URLEncoder.encode("equipment_name", "UTF-8")+"="+ URLEncoder.encode(equipment_name, "UTF-8")+"&"+URLEncoder.encode("location_street", "UTF-8")+"="+ URLEncoder.encode(location_street, "UTF-8")+"&"+URLEncoder.encode("location_building", "UTF-8")+"="+ URLEncoder.encode(location_building, "UTF-8")+"&"+URLEncoder.encode("location_city", "UTF-8")+"="+ URLEncoder.encode(location_city, "UTF-8")+"&"+URLEncoder.encode("time_arrival", "UTF-8")+"="+URLEncoder.encode(time_arrival, "UTF-8");
                 bw.write(post1);
                 bw.flush();
                 bw.close();
@@ -92,18 +92,6 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
         }
         protected void onPostExecute(String result){
             super.onPostExecute(result);
-            //If result incorrect print a toast
-            if(result.equals("This account already exist")){
-                Toast.makeText(getApplicationContext(),"This account already exist", Toast.LENGTH_LONG).show();
-
-            }
-
-            else{
-
-                Toast.makeText(getApplicationContext(),"Account Created!", Toast.LENGTH_LONG).show();
-             //   Intent intent = new Intent(MainActivity3.this, MainActivity.class);
-             //   startActivity(intent);
-            }
         }
     }
 
@@ -231,6 +219,11 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
         input_time = time.getText().toString();
 
         equipments_result.setText(input_equipment + " delivered at " + input_street + ", building  " + input_building + " in " + input_city + "\nFrom " + input_time + " and will be available for 2 hours");
+
+        //Function posting parameters to database
+        String url = "http://192.168.26.1/Final_Project/Back_end/equipments.php";
+        DownloadTask task = new DownloadTask();
+        task.execute(input_equipment,input_street,input_building,input_city,input_time,url);
 
     }
 }

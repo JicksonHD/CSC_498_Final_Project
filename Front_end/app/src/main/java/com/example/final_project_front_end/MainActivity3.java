@@ -163,6 +163,8 @@ public class MainActivity3 extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Password too short",Toast.LENGTH_LONG).show();
                 }else {
                     error_hint.setText("");
+
+                    //Function posting parameters to database
                     String url = "http://192.168.26.1/Final_Project/Back_end/signUp.php";
                     DownloadTask task = new DownloadTask();
                     task.execute(entered_email, entered_password,entered_phone_number,url);

@@ -147,6 +147,7 @@ public class MainActivity2 extends AppCompatActivity {
         }
         else {
 
+            //Function posting parameters to database
             String url = "http://192.168.26.1/Final_Project/Back_end/signIn.php";
             DownloadTask task = new DownloadTask();
             task.execute(entered_email, entered_password,url);
