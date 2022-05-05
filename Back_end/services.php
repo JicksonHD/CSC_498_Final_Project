@@ -18,9 +18,27 @@ if(isset($_POST['services_name']) && isset($_POST['location_street']) && isset($
     $location_c = validate($_POST['location_city']);
     $time = validate($_POST['time_arrival']);
 
-    $querry = $mysqli->prepare("INSERT INTO services(services_name, location_street, location_building, location_floor, location_city, time_arrival) VALUES (?, ?, ?, ?, ?, ?);");
-    $querry->bind_param("ssssss", $name, $location_s, $location_b, $location_f, $location_c, $time);
-    $querry->execute();
+
+    $querry = "SELECT service_available FROM services_availability where services_name = '" . $name . "'";
+    $result = mysqli_query($mysqli, $querry);
+
+    if(mysqli_num_rows($result) != 0){
+
+        $row = mysqli_fetch_assoc($result);
+        $service_available = $row['service_available'];
+
+        if($service_available == 1){
+
+            $querry2 = $mysqli->prepare("INSERT INTO services(services_name, location_street, location_building, location_floor, location_city, time_arrival) VALUES (?, ?, ?, ?, ?, ?);");
+            $querry2->bind_param("ssssss", $name, $location_s, $location_b, $location_f, $location_c, $time);
+            $querry2->execute();
+        }else{
+            echo "Service currently unavailable";
+        }
+    }
+
+
+    
 
 }
 

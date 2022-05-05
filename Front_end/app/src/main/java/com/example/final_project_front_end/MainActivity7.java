@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -90,6 +91,12 @@ public class MainActivity7 extends AppCompatActivity implements AdapterView.OnIt
         }
         protected void onPostExecute(String result){
             super.onPostExecute(result);
+
+            if (result.equals("Service currently unavailable")){
+
+                services_result.setText("");
+                Toast.makeText(MainActivity7.this, "Service currently unavailable", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
