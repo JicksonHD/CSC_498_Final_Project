@@ -29,6 +29,8 @@ if(isset($_POST['services_name']) && isset($_POST['location_street']) && isset($
 
         if($service_available == 1){
 
+            //Service is = 1 means it is available, service is != 1 means it is unavailabe (this will be changed manually)
+
             $querry2 = $mysqli->prepare("INSERT INTO services(services_name, location_street, location_building, location_floor, location_city, time_arrival) VALUES (?, ?, ?, ?, ?, ?);");
             $querry2->bind_param("ssssss", $name, $location_s, $location_b, $location_f, $location_c, $time);
             $querry2->execute();
