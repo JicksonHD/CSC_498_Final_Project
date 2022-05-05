@@ -14,6 +14,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStream;
@@ -23,6 +26,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 
 public class MainActivity6 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -38,6 +42,7 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
     EditText city;
     Button order_button;
     String input_material;
+    String [] remaining_quantity;
 
     public class DownloadTask extends AsyncTask<String, Void, String> {
 
@@ -92,6 +97,29 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
         }
         protected void onPostExecute(String result){
             super.onPostExecute(result);
+
+            if (result.equals("Not enough quantity")){
+
+                material_order_result.setText("");
+                Toast.makeText(MainActivity6.this, "Not enough quantity", Toast.LENGTH_SHORT).show();
+            }
+
+            try{
+                JSONArray array = new JSONArray(result);
+                ArrayList<Object> list = new ArrayList<>();
+                JSONObject obj;
+
+                for (int i = 0; i < array.length(); i ++){
+                    list.add(array.get(i));
+                }
+                // receiving the result from the api
+                remaining_quantity = new String[array.length()];
+                obj = (JSONObject) array.get(0);
+                remaining_quantity[0] = obj.getString("quantity_available");
+                Toast.makeText(MainActivity6.this,"Remaining: " + remaining_quantity[0], Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -159,9 +187,6 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
         //Everytime i select an item of the spinner every textBox will be initilized to empty
-
-       // String text = parent.getItemAtPosition(i).toString();
-       // Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
 
 
         if (i == 0){

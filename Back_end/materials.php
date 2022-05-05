@@ -22,7 +22,6 @@ if(isset($_POST['material_name']) && isset($_POST['material_type']) && isset($_P
     $type = validate($_POST['material_type']);
 
 
-
     $query = "SELECT quantity_available FROM quantities WHERE material_name= '" . $name . "'";
     $result = mysqli_query($mysqli, $query);
 
@@ -42,7 +41,7 @@ if(isset($_POST['material_name']) && isset($_POST['material_type']) && isset($_P
             $query3->bind_param("is", $remaining_quantity, $name);
             $query3->execute();
 
-            $response[] = $row;
+            $response['quantity_available'] = $remaining_quantity;
             $json_respnse = json_encode($response);
             echo $json_respnse;
 
