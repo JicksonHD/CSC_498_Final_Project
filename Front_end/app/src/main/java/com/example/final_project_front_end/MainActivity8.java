@@ -92,6 +92,12 @@ public class MainActivity8 extends AppCompatActivity implements AdapterView.OnIt
         }
         protected void onPostExecute(String result){
             super.onPostExecute(result);
+
+            if (result.equals("Equipmment currently unavailable")){
+
+                equipments_result.setText("");
+                Toast.makeText(MainActivity8.this, "Equipment currently unavailable", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

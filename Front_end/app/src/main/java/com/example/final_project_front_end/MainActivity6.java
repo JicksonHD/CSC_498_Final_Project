@@ -102,24 +102,27 @@ public class MainActivity6 extends AppCompatActivity implements AdapterView.OnIt
 
                 material_order_result.setText("");
                 Toast.makeText(MainActivity6.this, "Not enough quantity", Toast.LENGTH_SHORT).show();
-            }
+            }else{
 
-            try{
-                JSONArray array = new JSONArray(result);
-                ArrayList<Object> list = new ArrayList<>();
-                JSONObject obj;
+                try{
+                    JSONArray array = new JSONArray(result);
+                    ArrayList<Object> list = new ArrayList<>();
+                    JSONObject obj;
 
-                for (int i = 0; i < array.length(); i ++){
-                    list.add(array.get(i));
+                    for (int i = 0; i < array.length(); i ++){
+                        list.add(array.get(i));
+                    }
+                    // receiving the result from the api
+                    remaining_quantity = new String[array.length()];
+                    obj = (JSONObject) array.get(0);
+                    remaining_quantity[0] = obj.getString("quantity_available");
+                    Toast.makeText(MainActivity6.this,"Remaining: " + remaining_quantity[0], Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                // receiving the result from the api
-                remaining_quantity = new String[array.length()];
-                obj = (JSONObject) array.get(0);
-                remaining_quantity[0] = obj.getString("quantity_available");
-                Toast.makeText(MainActivity6.this,"Remaining: " + remaining_quantity[0], Toast.LENGTH_LONG).show();
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+
+
         }
     }
 
